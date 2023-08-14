@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turtle hatcheries in SriLanka</title>
+
+  <link rel="stylesheet" href="international-telephone-input.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="favicon-32x32.png">
+
+
+
+
+  <style>
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 270px;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+
+    .register {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      background-color: #18547c;
+      margin-top: 200px;
+    }
+
+    /* Style for input controls */
+    .input-control {
+      margin-bottom: 14px;
+    }
+
+    input[type="text"],
+    input[type="tel"],
+    select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    /* Style for error messages */
+    .error {
+      color: rgb(247, 31, 31);
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    /* Style for buttons */
+    .submitButton {
+      padding: 10px 40px;
+      background-color: #0cd116;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .submitButton:disabled {
+      background-color: #ccccccd8;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="header">
+    <nav>
+      <h2 class="logo">~Nat<span>Ure~</span></h2>
+      <div class="nav-link" id="navLink">
+        <img src="icons8-close-32.png" onclick="hideMenu()" alt="close">
+        <ul>
+          <li><a href="tickets.html">TICKETS</a></li>
+          <li><a href="details.html">DETAILS PAGE</a></li>
+          <li><a href="payments.html">PAYMENT PAGE</a></li>
+          <li><a href="confiremation.html">CONFIRMATION</a></li>
+        </ul>
+      </div>
+      <img src="menu.png" onclick="showMenu()" alt="menu">
+    </nav>
+
+
+
+
+
+
+
+    <section class="tic-header">
+
+
+      <div class="topic">
+        <h1>Buy Tickets</h1>
+
+        <div class="homi">
+
+
+          <a href="index.html">
+            <p>
+              < Home<p>
+          </a>
+
+
+        </div>
+      </div>
+    </section>
+
+
+
+    <div class="summaryT">
+      <table id="summary-Table">
+        <thead id="summaryHead">
+          <th>Field</th>
+          <th>Description</th>
+        </thead>
+        <tbody id="summaryBody">
+
+        </tbody>
+      </table>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="register">
+      <form id="detailsForm" class="formD" action="">
+        <h1>Enter Your Details</h1>
+        <div class="input-control">
+          <labal for="fullName">Full Name</labal>
+          <input type="text" id="fullname" placeholder="">
+          <div class="error" id="nameError"></div>
+        </div>
+        <div class="iti">
+          <labal for="mobileNumber">Mobile Number</labal>
+          <input type="tel" name="phone">
+
+
+
+        </div>
+
+
+
+        <div class="input-control">
+          <labal for="Email">E Mail</labal>
+          <input type="text" id="eMail" placeholder="">
+          <div class="error" id="emailError"></div>
+        </div>
+        <div class="input-control">
+          <labal for="confirmEmail">Confirm E Mail</labal>
+          <input type="text" id="confirmMail" placeholder="">
+          <div class="error" id="confirmMailerror"></div>
+        </div>
+        <div class="input-control">
+          <labal for="fullName">Gender</labal>
+          <select id="gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <br>
+
+
+        <button type="submit" id="displaySummary">Display Summary</button>
+
+
+
+
+
+        <button type="submit" id="submitButton" class="submitButton" disabled>Continue With Purchase</button>
+
+
+
+
+
+
+
+        <div class="tableDivSum">
+          <table id=" tableSummary">
+            <thead id="summaryHeadSummary">
+
+              <th>Field</th>
+              <th>Description</th>
+
+            </thead>
+            <tbody id="summaryBodySummary">
+
+
+
+            </tbody>
+
+
+          </table>
+      </form>
+    </div>
+    
+
+
+    </div>
+
+
+
+
+  </section>
+
+
+  <div class="fotr">
+
+    <p>If you wish to join with us you can follow us</p>
+
+    <div class="ic">
+      <img src="23fb.png" alt="fb"><img src="45ins.png" alt="ins"><img src="56tw.png" alt="twit"><img src="link.png"
+        alt="linkd">
+
+      <p>Presented by<img src="icons8-heart-94.png" alt="heart"> Nature Travelers</p>
+
+
+    </div>
+
+    <script src="international-telephone-input.js"></script>
+
+
+
+    <script src="script.js"></script>
+
+    <script>
+ var navlink = document.getElementById("navLink");
+
+function showMenu() {
+    navLink.style.right = "0";
+
+}
+function hideMenu() {
+    navLink.style.right = "-200px";
+
+}
+
+
+
+
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+
+
+        updateSummaryTable(); // Initial update
+
+        function updateSummaryTable() {
+          const summaryTableBody = document.getElementById("summaryBody");
+          summaryTableBody.innerHTML = ''; // Clear previous rows
+          // Calculate totals
+
+
+
+
+
+          // Retrieve data from local storage
+          const pickedDate = localStorage.getItem("pickedDate");
+          const selectedRowData = JSON.parse(localStorage.getItem("selectedRowData"));
+          const selectedOptions = JSON.parse(localStorage.getItem("selectedOptions"));
+          const calculatedFee = parseFloat(localStorage.getItem("calculatedFee"));
+          const totalPayable = parseFloat(localStorage.getItem("totalPayable")); // Retrieve totalPayable
+          const slAdultCount = parseInt(localStorage.getItem("sriLankan"));
+          const slChildCount = parseInt(localStorage.getItem("child-counting"));
+          const foreignerAdultCount = parseInt(localStorage.getItem("adultf-counting"));
+          const foreignerChildCount = parseInt(localStorage.getItem("childf-counting"));
+
+
+          // Populate the summary table
+          const rows = [
+            { field: "Picked Date", description: pickedDate },
+            { field: "Selected Category", description: selectedRowData?.category || "" },
+            { field: "Selected Options", description: selectedOptions?.join(", ") || "" },
+            { field: "Calculated Fee", description: calculatedFee ? calculatedFee.toFixed(2) + " USD" : "" },
+            { field: "Total Payable", description: totalPayable ? totalPayable.toFixed(2) + " USD" : "" }, // Display totalPayable
+            { field: "SL Adults", description: slAdultCount },
+            { field: "SL Children", description: slChildCount },
+            { field: "Foreign Adults", description: foreignerAdultCount },
+            { field: "Foreign Children", description: foreignerChildCount },
+
+          ];
+
+
+
+
+
+
+          rows.forEach(rowData => {
+            const row = document.createElement("tr");
+            row.innerHTML = `<td>${rowData.field}</td><td>${rowData.description}</td>`;
+            summaryTableBody.appendChild(row);
+          });
+        }
+
+
+
+        const myForm = document.getElementById("myForm");
+        myForm.addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent form submission
+          updateSummaryTable();
+        });
+      });
+
+
+
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("detailsForm");
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Get form input values
+          const fullName = document.getElementById("fullname").value;
+          const mobileNumber = document.querySelector('input[type="tel"]').value;
+          const email = document.getElementById("eMail").value;
+          const confirmEmail = document.getElementById("confirmMail").value;
+          const gender = document.getElementById("gender").value;
+
+          // Store data in an object
+          const formData = {
+            fullName,
+            mobileNumber,
+            email,
+            confirmEmail,
+            gender,
+          };
+
+          // Store data in local storage
+          localStorage.setItem("formData", JSON.stringify(formData));
+
+          // Enable the submit button
+          document.getElementById("submitButton").disabled = false;
+        });
+      });
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("detailsForm");
+        const displaySummaryButton = document.getElementById("displaySummary");
+        const submitButton = document.getElementById("submitButton");
+        const summaryTable = document.getElementById("tableSummary");
+
+        form.addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Validation
+          const fullName = document.getElementById("fullname").value.trim();
+          // Perform validation for other fields
+
+          if (fullName === "") {
+            document.getElementById("nameError").textContent = "Please enter your full name.";
+            return;
+          }
+
+          // Other validation checks for other fields
+
+          // If validation passes
+          document.getElementById("nameError").textContent = "";
+          submitButton.disabled = false;
+
+          // Move to next page on button click
+          submitButton.addEventListener("click", function () {
+            // Here you can redirect to the next page using window.location.href
+            // For example:
+            window.location.href = "payments.html";
+
+          });
+        });
+
+        displaySummaryButton.addEventListener("click", function () {
+          // Display summary table logic
+
+          const fullName = document.getElementById("fullname").value;
+          const mobileNumber = document.getElementsByName("phone")[0].value;
+          const email = document.getElementById("eMail").value;
+          const confirmEmail = document.getElementById("confirmMail").value;
+          const gender = document.getElementById("gender").value;
+
+          // Create rows for each form field and its value in the summary table
+          const fieldsData = [
+            { field: "Full Name", value: fullName },
+            { field: "Mobile Number", value: mobileNumber },
+            { field: "E Mail", value: email },
+            { field: "Confirm E Mail", value: confirmEmail },
+            { field: "Gender", value: gender },
+          ];
+
+          fieldsData.forEach((data) => {
+            const row = summaryBodySummary.insertRow();
+            const fieldCell = row.insertCell(0);
+            const valueCell = row.insertCell(1);
+
+            fieldCell.textContent = data.field;
+            valueCell.textContent = data.value;
+          });
+
+          // Scroll to the summary table
+          tableSummary.scrollIntoView({ behavior: "smooth" });
+        });
+
+        // ... Your existing code ...
+
+      });
+
+
+
+    </script>
+</body>
+
+</html>
